@@ -7,6 +7,14 @@ import services.dj45x.shapes.Triangle;
 
 import java.util.Scanner;
 public class ShapeFactory {
+    /**
+     * Creates a Shape based on the given shape type and scanner input.
+     *
+     * @param  shapeType   the type of shape to create
+     * @param  scanner     the scanner object for input
+     * @return             the created Shape object
+     */
+
     public static Shape createShape(String shapeType, Scanner scanner) {
         return switch (shapeType.toLowerCase()) {
             case "circle" -> createCircle(scanner);
@@ -15,6 +23,12 @@ public class ShapeFactory {
             default -> throw new IllegalArgumentException("Unknown shape type: " + shapeType);
         };
     }
+    /**
+     * Creates a Circle shape based on the radius and color input.
+     *
+     * @param  scanner   the scanner object for input
+     * @return           the created Circle object
+     */
 
     private static Shape createCircle(Scanner scanner) {
         System.out.println("Enter radius for Circle: ");
@@ -26,6 +40,12 @@ public class ShapeFactory {
         return new Circle(radius, color);
     }
 
+    /**
+     * Creates a Rectangle shape based on the length, width, and color input.
+     *
+     * @param  scanner   the scanner object for input
+     * @return           the created Rectangle object
+     */
     private static Shape createRectangle(Scanner scanner) {
         System.out.println("Enter the length for the rectangle: ");
         double length = scanner.nextDouble();
@@ -37,6 +57,12 @@ public class ShapeFactory {
         return new Rectangle(length, width, color);
     }
 
+    /**
+     * Creates a Triangle shape based on the base, height, sides A, B, C, and color input.
+     *
+     * @param  scanner   the scanner object for input
+     * @return           the created Triangle object
+     */
     private static Shape createTriangle(Scanner scanner) {
         System.out.println("Enter base for the triangle: ");
         double base = scanner.nextDouble();
