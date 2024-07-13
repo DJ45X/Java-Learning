@@ -8,6 +8,11 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+    /**
+     * A description of the main function that handles shape creation based on user input.
+     *
+     * @param  args   the array of command-line arguments
+     */
     public static void main(String[] args) {
         Scanner scanner = new Scanner((System.in));
         List<Shape> shapes = new ArrayList<>();
