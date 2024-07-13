@@ -7,6 +7,7 @@ import services.dj45x.shapes.Triangle;
 
 import java.util.Scanner;
 public class ShapeFactory {
+
     /**
      * Creates a Shape based on the given shape type and scanner input.
      *
@@ -14,7 +15,6 @@ public class ShapeFactory {
      * @param  scanner     the scanner object for input
      * @return             the created Shape object
      */
-
     public static Shape createShape(String shapeType, Scanner scanner) {
         return switch (shapeType.toLowerCase()) {
             case "circle" -> createCircle(scanner);
@@ -23,13 +23,13 @@ public class ShapeFactory {
             default -> throw new IllegalArgumentException("Unknown shape type: " + shapeType);
         };
     }
+
     /**
      * Creates a Circle shape based on the radius and color input.
      *
      * @param  scanner   the scanner object for input
      * @return           the created Circle object
      */
-
     private static Shape createCircle(Scanner scanner) {
         System.out.println("Enter radius for Circle: ");
         double radius = scanner.nextDouble();
